@@ -61,7 +61,14 @@ function createBaseLayers() {
         }));
     }
 
+    if (typeof OpenSky === 'undefined') {
+        console.error("OpenSky is undefined. Defaulting to OpenStreetMap layer.");
+    }
+
+    console.log("OpenSky is set to:", OpenSky);
+
     if (OpenSky) {
+        console.log("Adding OpenSky MapProxy layer");
         world.push(new ol.layer.Tile({
             source: new ol.source.OSM({
                 "url" : "https://beta.opensky-network.org/mapproxy/tiles/1.0.0/osm/osm_grid/{z}/{x}/{y}.png",
@@ -74,6 +81,7 @@ function createBaseLayers() {
             type: 'base',
         }));
     } else {
+        console.log("Adding default OpenStreetMap layer");
         world.push(new ol.layer.Tile({
             source: new ol.source.OSM({
                 maxZoom: 17,
