@@ -17,7 +17,7 @@ let PlaneCountInTitle = true;
 let MessageRateInTitle = true;
 
 // -- OSM Layer.js Settings ----------------------------------------
-let OpenSky = true;
+// let OpenSky = true;
 
 // -- Output Settings -------------------------------------
 // The DisplayUnits setting controls whether nautical (ft, nmi, kt),

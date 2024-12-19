@@ -67,21 +67,21 @@ function createBaseLayers() {
 
     console.log("OpenSky is set to:", OpenSky);
 
-    if (OpenSky) {
-        console.log("Adding OpenSky MapProxy layer");
-        world.push(new ol.layer.Tile({
-            source: new ol.source.OSM({
-                "url" : "https://beta.opensky-network.org/mapproxy/tiles/1.0.0/osm/osm_grid/{z}/{x}/{y}.png",
-                attributionsCollapsible: false,
-                maxZoom: 16,
-                transition: tileTransition,
-            }),
-            name: 'osm_osky',
-            title: 'OpenStreetMap OSKY',
-            type: 'base',
-        }));
-    } else {
-        console.log("Adding default OpenStreetMap layer");
+    // if (OpenSky) {
+    //     console.log("Adding OpenSky MapProxy layer");
+    //     world.push(new ol.layer.Tile({
+    //         source: new ol.source.OSM({
+    //             "url" : "https://beta.opensky-network.org/mapproxy/tiles/1.0.0/osm/osm_grid/{z}/{x}/{y}.png",
+    //             attributionsCollapsible: false,
+    //             maxZoom: 16,
+    //             transition: tileTransition,
+    //         }),
+    //         name: 'osm_osky',
+    //         title: 'OpenStreetMap OSKY',
+    //         type: 'base',
+    //     }));
+    // } else {
+    //     console.log("Adding default OpenStreetMap layer");
         world.push(new ol.layer.Tile({
             source: new ol.source.OSM({
                 maxZoom: 17,
@@ -92,7 +92,7 @@ function createBaseLayers() {
             title: 'OpenStreetMap',
             type: 'base',
         }));
-    }
+    // }
 
     let basemap_id = "rastertiles/voyager";
     world.push(new ol.layer.Tile({
@@ -109,7 +109,7 @@ function createBaseLayers() {
         type: 'base',
     }));
 
-    if (!OpenSky) {
+    // if (!OpenSky) {
         world.push(new ol.layer.Tile({
             source: new ol.source.OSM({
                 "url": "https://{a-d}.tile.openstreetmap.de/{z}/{x}/{y}.png",
@@ -121,7 +121,7 @@ function createBaseLayers() {
             title: 'OpenStreetMap DE',
             type: 'base',
         }));
-    }
+    // }
 
     if (1) {
         world.push(new ol.layer.Tile({

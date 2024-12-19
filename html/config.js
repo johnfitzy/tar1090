@@ -10,7 +10,7 @@ PlaneCountInTitle = false;
 MessageRateInTitle = false;
 
 // -- OSM Tiles use MapProxy
-OpenSky = true;
+// OpenSky = true;
 
 // -- Output Settings -------------------------------------
 // The DisplayUnits setting controls whether nautical (ft, nmi, kt),
