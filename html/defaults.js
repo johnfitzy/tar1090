@@ -16,9 +16,6 @@ let disabled = false;
 let PlaneCountInTitle = true;
 let MessageRateInTitle = true;
 
-// -- OSM Layer.js Settings ----------------------------------------
-// let OpenSky = true;
-
 // -- Output Settings -------------------------------------
 // The DisplayUnits setting controls whether nautical (ft, nmi, kt),
 // metric (m, km, km/h) or imperial (ft, mi, mph) units are used in the
