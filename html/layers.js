@@ -63,6 +63,7 @@ function createBaseLayers() {
 
     world.push(new ol.layer.Tile({
         source: new ol.source.OSM({
+            "url" : "https://beta.opensky-network.org/mapproxy/tiles/1.0.0/osm/osm_grid/{z}/{x}/{y}.png",
             maxZoom: 17,
             attributionsCollapsible: false,
             transition: tileTransition,
@@ -84,18 +85,6 @@ function createBaseLayers() {
         }),
         name: "carto_" + basemap_id,
         title: 'CARTO.com English',
-        type: 'base',
-    }));
-
-    world.push(new ol.layer.Tile({
-        source: new ol.source.OSM({
-            "url" : "https://{a-d}.tile.openstreetmap.de/{z}/{x}/{y}.png",
-            attributionsCollapsible: false,
-            maxZoom: 17,
-            transition: tileTransition,
-        }),
-        name: 'osm_de',
-        title: 'OpenStreetMap DE',
         type: 'base',
     }));
 
