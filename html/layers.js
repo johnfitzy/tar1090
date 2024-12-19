@@ -61,11 +61,11 @@ function createBaseLayers() {
         }));
     }
 
-    if (typeof OpenSky === 'undefined') {
-        console.error("OpenSky is undefined. Defaulting to OpenStreetMap layer.");
-    }
-
-    console.log("OpenSky is set to:", OpenSky);
+    // if (typeof OpenSky === 'undefined') {
+    //     console.error("OpenSky is undefined. Defaulting to OpenStreetMap layer.");
+    // }
+    //
+    // console.log("OpenSky is set to:", OpenSky);
 
     // if (OpenSky) {
     //     console.log("Adding OpenSky MapProxy layer");
