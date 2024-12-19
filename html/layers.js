@@ -61,16 +61,30 @@ function createBaseLayers() {
         }));
     }
 
-    world.push(new ol.layer.Tile({
-        source: new ol.source.OSM({
-            maxZoom: 17,
-            attributionsCollapsible: false,
-            transition: tileTransition,
-        }),
-        name: 'osm',
-        title: 'OpenStreetMap',
-        type: 'base',
-    }));
+    if (OpenSky) {
+        world.push(new ol.layer.Tile({
+            source: new ol.source.OSM({
+                "url" : "https://beta.opensky-network.org/mapproxy/tiles/1.0.0/osm/osm_grid/{z}/{x}/{y}.png",
+                attributionsCollapsible: false,
+                maxZoom: 16,
+                transition: tileTransition,
+            }),
+            name: 'osm_osky',
+            title: 'OpenStreetMap OSKY',
+            type: 'base',
+        }));
+    } else {
+        world.push(new ol.layer.Tile({
+            source: new ol.source.OSM({
+                maxZoom: 17,
+                attributionsCollapsible: false,
+                transition: tileTransition,
+            }),
+            name: 'osm',
+            title: 'OpenStreetMap',
+            type: 'base',
+        }));
+    }
 
     let basemap_id = "rastertiles/voyager";
     world.push(new ol.layer.Tile({
@@ -87,17 +101,19 @@ function createBaseLayers() {
         type: 'base',
     }));
 
-    world.push(new ol.layer.Tile({
-        source: new ol.source.OSM({
-            "url" : "https://{a-d}.tile.openstreetmap.de/{z}/{x}/{y}.png",
-            attributionsCollapsible: false,
-            maxZoom: 17,
-            transition: tileTransition,
-        }),
-        name: 'osm_de',
-        title: 'OpenStreetMap DE',
-        type: 'base',
-    }));
+    if (!OpenSky) {
+        world.push(new ol.layer.Tile({
+            source: new ol.source.OSM({
+                "url": "https://{a-d}.tile.openstreetmap.de/{z}/{x}/{y}.png",
+                attributionsCollapsible: false,
+                maxZoom: 17,
+                transition: tileTransition,
+            }),
+            name: 'osm_de',
+            title: 'OpenStreetMap DE',
+            type: 'base',
+        }));
+    }
 
     if (1) {
         world.push(new ol.layer.Tile({
